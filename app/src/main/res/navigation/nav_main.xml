@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/chatHistoryFragment">
+
+    <fragment
+        android:id="@+id/chatHistoryFragment"
+        android:name="com.bangkit.annaapp.view.chathistory.ChatHistoryFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat_history">
+        <action
+            android:id="@+id/action_chatHistoryFragment_to_chatFragment"
+            app:destination="@id/chatFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/dictionaryFragment"
+        android:name="com.bangkit.annaapp.view.dictionary.DictionaryFragment"
+        android:label="fragment_read"
+        tools:layout="@layout/fragment_dictionary" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.bangkit.annaapp.view.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.bangkit.annaapp.view.editprofile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile">
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.bangkit.annaapp.view.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="chatRoomId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.bangkit.annaapp.view.profile.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.bangkit.annaapp.view.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
